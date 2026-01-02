@@ -55,7 +55,7 @@ def main():
     metrics = get_model_metrics(reg, data)
 
     # Save Model
-    model_name = "sklearn_regress.pkl"
+    model_name = "sklearn_reg.pkl"
 
     joblib.dump(value=reg, filename=model_name)
 
