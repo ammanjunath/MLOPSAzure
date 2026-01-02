@@ -5,7 +5,6 @@ import joblib
 
 def init():
     global model
-    
     model_path = Model.get_model_path(
         model_name="sklearn_regression_model.pkl"
     )
@@ -17,7 +16,7 @@ def run(raw_data, request_headers):
     result = model.predict(data)
     
     return {"result": result.tolist()}
-
+    
 if __name__ == "__main__":
     init()
     test_row = (
