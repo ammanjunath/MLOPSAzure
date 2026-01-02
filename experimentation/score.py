@@ -6,7 +6,9 @@ import joblib
 
 
 def init():
-    model_path = Model.get_model_path(model_name="sklearn_reg.pkl")
+    model_path = Model.get_model_path(
+        model_name="sklearn_reg.pkl"
+    )
     model = joblib.load(model_path)
 
 
@@ -23,4 +25,4 @@ if __name__ == "__main__":
     request_header = {}
     prediction = run(test_row, request_header)
     print("Test result:", prediction)
-
+    
