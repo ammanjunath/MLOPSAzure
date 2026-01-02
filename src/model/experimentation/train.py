@@ -1,6 +1,5 @@
 from sklearn.datasets import load_diabetes
 from sklearn.linear_model import Ridge
-from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import joblib
@@ -23,7 +22,7 @@ def train_model(data, args):
     reg_model = Ridge(**args)
     reg_model.fit(data["train"]["X"], data["train"]["y"])
     return reg_model
-    
+
 
 def main():
     # Load Data
@@ -46,8 +45,8 @@ def main():
 
     # Save Model
     model_name = "sklearn_reg.pkl"
-
     joblib.dump(value=reg, filename=model_name)
+
 
 if __name__ == '__main__':
     main()
