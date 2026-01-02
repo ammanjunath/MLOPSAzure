@@ -43,9 +43,6 @@ def main():
     }
     reg = train_model(data, args)
 
-    # Validate Model on Validation Set
-    # metrics = get_model_metrics(reg, data)
-
     # Save Model
     model_name = "sklearn_regression_model.pkl"
 
