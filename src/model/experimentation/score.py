@@ -3,6 +3,7 @@ import numpy
 from azureml.core.model import Model
 import joblib
 
+
 def init():
     global model
     
@@ -10,11 +11,13 @@ def init():
         model_name="sklearn_regression_model.pkl")
     model = joblib.load(model_path)
 
+
 def run(raw_data, request_headers):
     data = json.loads(raw_data)["data"]
     data = numpy.array(data)
     result = model.predict(data)
 
+    
     return {"result": result.tolist()}
 
 init()
