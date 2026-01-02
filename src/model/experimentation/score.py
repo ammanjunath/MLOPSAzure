@@ -16,8 +16,8 @@ def run(raw_data, request_headers):
     result = model.predict(data)
     
     return {"result": result.tolist()}
-    
-if __name__ == "__main__":
+
+  if __name__ == "__main__":
     init()
     test_row = (
         '{"data":[[1,2,3,4,5,6,7,8,9,10],'
