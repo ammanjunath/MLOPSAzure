@@ -7,8 +7,9 @@ import joblib
 def init():
     global model
 
+    
     model_path = Model.get_model_path(
-        model_name="sklearn_regression_model.pkl"
+    model_name="sklearn_regression_model.pkl"
     )
     model = joblib.load(model_path)
 
@@ -18,6 +19,7 @@ def run(raw_data, request_headers):
     data = np.array(data)
     result = model.predict(data)
 
+    
     return {"result": result.tolist()}
 
 
