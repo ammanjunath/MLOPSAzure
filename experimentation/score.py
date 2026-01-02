@@ -3,13 +3,11 @@ import numpy
 from azureml.core.model import Model
 import joblib
 
-
 def init():
     """ This is an init model for sklearn """
     global model
     model_path = Model.get_model_path(model_name="sklearn_regression_model.pkl")
     model = joblib.load(model_path)
-
 
 def run(raw_data, request_headers):
     """ This is a data load """
@@ -26,3 +24,4 @@ if __name__ == "__main__":
     prediction = run(test_row, request_header)
 
     print("Test result:", prediction)
+
