@@ -9,8 +9,8 @@ def init():
     model_path = Model.get_model_path(
         model_name="sklearn_regression_model.pkl")
     model = joblib.load(model_path)
-    
-    
+
+
 def run(raw_data, request_headers):
     data = json.loads(raw_data)["data"]
     data = numpy.array(data)
