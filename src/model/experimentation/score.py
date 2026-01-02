@@ -14,7 +14,6 @@ def run(raw_data, request_headers):
     data = json.loads(raw_data)["data"]
     data = np.array(data)
     result = model.predict(data)
-    
     return {"result": result.tolist()}
 
 
