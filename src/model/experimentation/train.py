@@ -25,14 +25,6 @@ def train_model(data, args):
     return reg_model
 
 
-# Evaluate the metrics for the model
-def get_model_metrics(reg_model, data):
-    preds = reg_model.predict(data["test"]["X"])
-    mse = mean_squared_error(preds, data["test"]["y"])
-    metrics = {"mse": mse}
-    return metrics
-
-
 def main():
     # Load Data
     sample_data = load_diabetes()
