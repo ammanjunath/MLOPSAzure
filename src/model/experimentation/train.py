@@ -42,7 +42,6 @@ def main():
     }
     reg = train_model(data, args)
 
-
     # Save Model
     model_name = "sklearn_reg.pkl"
     joblib.dump(value=reg, filename=model_name)
