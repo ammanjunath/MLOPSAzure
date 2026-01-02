@@ -1,5 +1,3 @@
-import json
-
 import numpy
 from azureml.core.model import Model
 import joblib
@@ -25,4 +23,3 @@ if __name__ == "__main__":
     request_header = {}
     prediction = run(test_row, request_header)
     print("Test result:", prediction)
-    
