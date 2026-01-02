@@ -23,15 +23,7 @@ def train_model(data, args):
     reg_model = Ridge(**args)
     reg_model.fit(data["train"]["X"], data["train"]["y"])
     return reg_model
-
-
-# Evaluate the metrics for the model
-def get_model_metrics(reg_model, data):
-    preds = reg_model.predict(data["test"]["X"])
-    mse = mean_squared_error(preds, data["test"]["y"])
-    metrics = {"mse": mse}
-    return metrics
-
+    
 
 def main():
     # Load Data
@@ -51,8 +43,6 @@ def main():
     }
     reg = train_model(data, args)
 
-    # Validate Model on Validation Set
-    metrics = get_model_metrics(reg, data)
 
     # Save Model
     model_name = "sklearn_reg.pkl"
